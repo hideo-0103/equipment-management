@@ -77,4 +77,5 @@ class RecordsPdf < ApplicationRecord
       arr << ["", "", "", "合計", @order.total_price]
       return arr
     end
+  end
 end
