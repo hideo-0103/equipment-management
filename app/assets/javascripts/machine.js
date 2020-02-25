@@ -1,14 +1,14 @@
 $(document).ready(function() {
   // 画像用のinputを生成する関数
   const buildFileField = (index)=> {
-  const html = `<div data-index="${index}" class="js-file_group card" >
-                  <i class="fas fa-times-circle js-remove"></i>
-                  <img src="https://jp.images-monotaro.com/Monotaro3/pi/full/mono_image_na.jpg" width="100%" height="100%" class="default btn img-btn">
-                  <input class="js-file" type="file"
-                  name="machine[images_attributes][${index}][image]"
-                  id="machine_images_attributes_${index}_image">
-                  </div>`;
-    return html;
+    const html = `<div data-index="${index}" class="js-file_group card" >
+                    <i class="fas fa-times-circle js-remove"></i>
+                    <img src="https://jp.images-monotaro.com/Monotaro3/pi/full/mono_image_na.jpg" width="100%" height="100%" class="default btn img-btn">
+                    <input class="js-file" type="file"
+                    name="machine[images_attributes][${index}][image]"
+                    id="machine_images_attributes_${index}_image">
+                    </div>`;
+      return html;
   }
   const buildImg = (index, url)=> {
     const html = `<img data-index="${index}" src="${url}" width="50%" height="50%" class="btn img-btn w-100 h-100">`;
