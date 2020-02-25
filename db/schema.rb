@@ -71,9 +71,9 @@ ActiveRecord::Schema.define(version: 20200121112351) do
     t.string   "title"
     t.integer  "machine_id"
     t.integer  "user_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.text     "text",       limit: 4294967295
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.text     "text",       limit: 16777215
     t.index ["machine_id"], name: "index_repairs_on_machine_id", using: :btree
     t.index ["user_id"], name: "index_repairs_on_user_id", using: :btree
   end
