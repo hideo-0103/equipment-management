@@ -37,13 +37,11 @@ ActiveRecord::Schema.define(version: 20200121112351) do
 
   create_table "machines_repairs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "machine_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "repair_id_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "repair_id"
     t.index ["machine_id"], name: "index_machines_repairs_on_machine_id", using: :btree
     t.index ["repair_id"], name: "index_machines_repairs_on_repair_id", using: :btree
-    t.index ["repair_id_id"], name: "index_machines_repairs_on_repair_id_id", using: :btree
   end
 
   create_table "parts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
