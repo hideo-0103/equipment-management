@@ -138,6 +138,7 @@ GEM
     parser (2.7.0.2)
       ast (~> 2.4.0)
     pdf-core (0.7.0)
+    pg (1.2.2)
     popper_js (1.16.0)
     prawn (2.2.2)
       pdf-core (~> 0.7.0)
@@ -230,6 +231,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.2)
     temple (0.8.2)
     thor (1.0.1)
     thread_safe (0.3.6)
@@ -273,6 +275,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mini_magick
   mysql2 (>= 0.3.18, < 0.6.0)
+  pg
   prawn
   prawn-table
   pry-rails
@@ -282,6 +285,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
