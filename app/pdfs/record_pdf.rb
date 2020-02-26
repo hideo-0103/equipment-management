@@ -117,7 +117,7 @@ class RecordPdf < Prawn::Document
         row(1).borders = [:left,:bottom,:top]
         row(1).height = 400
         row(1).column(1).borders = [:left,:bottom,:right,:top]
-        row(-1).borders = [:left,:bottom]
+        row(-1).borders = [:left,:bottom,:right]
         row(-1).column(0).borders = [:left,:bottom,:right]
         row(-1).column(2).borders = [:left,:bottom,:right]
   
