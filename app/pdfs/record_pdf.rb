@@ -87,8 +87,13 @@ class RecordPdf < Prawn::Document
       
       def add_parts
         row = ["使用部品"]
-        @repair.parts.each do |part|
-          row.push("・#{part.name}")
+        if @repair.parts.empty?
+          row.push("なし")
+        else
+
+          @repair.parts.each do |part|
+            row.push("・#{part.name}")
+          end
         end
         return row
       end
