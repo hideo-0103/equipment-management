@@ -55,6 +55,7 @@ $(document).on('turbolinks:load',function() {
     })
   });
   $(document).on("click", ".machine_add", function() {
+    console.log('click');
     const machineName = $(this).attr("data-machine-name");
     const machineId = $(this).attr("data-machine-id");
     $(this)
