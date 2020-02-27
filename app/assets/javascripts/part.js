@@ -61,6 +61,7 @@ $(document).on('turbolinks:load',function() {
     addDeletemachine(machineName, machineId);
     addMember(machineId);
     $(this)
+      .stop(true, false)
       .parent()
       .remove();
   });
