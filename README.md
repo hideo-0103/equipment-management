@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 設備管理アプリ
 
-Things you may want to cover:
+###  作成経緯
+前職で製造ラインの設備の図面の管理、部品の管理、修復歴を残せる機能
+を持ったアプリケーションがあったら便利だなーと思っていて作りたいと思っていました。
+プログラミングをやりたいと思ったきっかけとなったものです。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 機能
+- 設備登録機能
+  - 設備名、図面(画像)の複数枚登録
+  - 部品を登録してある状態であれば設備の関連部品として登録可能
+- 設備編集機能
+  - 登録図面の追加・差し替え、設備名、登録部品の変更が可能。
+- 部品の登録機能
+  - 部品名、在庫数を登録可能
+- 部品の補充
+  - トップページのメニューから補充ページに遷移していただき、任意の部品を選択していただくと部品の補充が可能。
+- 設備の修復歴登録機能
+  - 設備に紐づいた修復箇所、修復内容、使用部品の登録。
+  - 登録後に修復歴一覧から修復歴を閲覧する時はPDF形式で表示
+- 設備の検索
+  - ログイン後トップページの検索窓で設備の検索が可能。
