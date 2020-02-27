@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load',function() {
+$(window).on('load',function() {
   function addmachine(machine) {
     let html = `
       <div class="part_machines p-1 d-flex justify-content-between border-bottom">
@@ -61,7 +61,6 @@ $(document).on('turbolinks:load',function() {
     addDeletemachine(machineName, machineId);
     addMember(machineId);
     $(this)
-      .stop(true, false)
       .parent()
       .remove();
   });
