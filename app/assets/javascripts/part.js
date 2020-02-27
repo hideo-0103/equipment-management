@@ -1,4 +1,4 @@
-$(window).on('load',function() {
+$(function() {
   function addmachine(machine) {
     let html = `
       <div class="part_machines p-1 d-flex justify-content-between border-bottom">
