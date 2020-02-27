@@ -68,10 +68,7 @@ $(function() {
     const machineName = $(this).attr("data-machine-name");
     const machineId = $(this).attr("data-machine-id");
     const machine = {id: machineId,name:machineName}
-    addmachine(machine)
-    console.log(machineName);
-    // addDeletemachine(machineName, machineId);
-    // addMember(machineId);
+    addmachine(machine);
     $(this)
       .parent()
       .remove();
