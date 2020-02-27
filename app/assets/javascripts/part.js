@@ -54,7 +54,7 @@ $(document).on('turbolinks:load',function() {
       }
     })
   });
-  $(document).on("click", ".machine_add", function(e) {
+  $(document).on("click", ".machine_add", function() {
     console.log('click');
     const machineName = $(this).attr("data-machine-name");
     const machineId = $(this).attr("data-machine-id");
@@ -63,7 +63,7 @@ $(document).on('turbolinks:load',function() {
     $(this)
       .parent()
       .remove();
-      e.preventDefault();
+      $('.machine_add').unbind('click');
   });
   $(document).on("click", ".machine_remove", function() {
     const machineName = $(this).attr("data-machine-name");
