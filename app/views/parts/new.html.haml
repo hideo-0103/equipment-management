@@ -23,10 +23,10 @@
         .field--right
           .search
             %input#machine-search-field.input{:placeholder => "関連する設備があれば入力してください", :type => "text",:class => "form-control mb-5"}/
-          #machine-search-result
-
         .field--left
           %label.label{:for => "chat_group_チャットメンバー"} 追加を押して設備に登録
+          #machine-search-result
+
         .field--right
           .js-add-machine
             %input{name: "part[machine_ids][]", type: "hidden"}
