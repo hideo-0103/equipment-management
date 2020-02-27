@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   def index
-    # @machines = Machine.all 
-    @machines = Machine.search(params[:search])
+    return nil if params[:keyword] == ""
+    @machines = Machine.where(['name LIKE ?', "%#{params[:keyword]}%"] )
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def edit

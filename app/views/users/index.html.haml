@@ -13,11 +13,9 @@
         #nav-search.py-3.bg-white.border
           %p.mx-5.font-weight-bold 設備の検索
           .mx-5
-            = form_tag(root_path, :method => 'get') do
-              .input-group
-                = text_field_tag :search, params[:search],placeholder: "キーワード検索", class: "form-control"
-                %span.input-group-btn
-                  = submit_tag '検索', :name => nil, class: "btn btn-primary"
+            .input-group
+              %input.form-control{:placeholder => "関連する設備があれば入力してください", :type => "text",:class => "form-control mb-5"}
+              %span.input-group-btn
         - if @machines == []
           %p.text-center 設備が登録されておりません。
         - else
