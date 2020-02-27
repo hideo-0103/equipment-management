@@ -1,16 +1,21 @@
 class PartsController < ApplicationController
   before_action :set_part, only: [:edit, :show, :update]
   def  index
-    # @parts = Part.all
     @parts = Part.search(params[:search])
   end
   
   def new
     @part = Part.new
-    @machines = Machine.all
+    return nil if params[:keyword] == ""
+    @machines = Machine.where(['name LIKE ?', "%#{params[:keyword]}%"] )
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
   def create
     @part = Part.new(part_params)
+    binding.pry
     if @part.save
       redirect_to parts_path
     else

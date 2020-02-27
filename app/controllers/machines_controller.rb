@@ -2,8 +2,14 @@ class MachinesController < ApplicationController
 before_action :set_machine, only: [ :edit, :show, :update]
   
   def index
-    @machines = Machine.search(params[:search])
+    return nil if params[:keyword] == ""
+    @machines = Machine.where(['name LIKE ?', "%#{params[:keyword]}%"] )
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
+  
   def new
     @machine = Machine.new
     @machine.images.new
@@ -11,7 +17,6 @@ before_action :set_machine, only: [ :edit, :show, :update]
   end
 
   def create
-    binding.pry
     @machine = Machine.new(machine_params)
     if @machine.save
       redirect_to root_path
@@ -30,7 +35,6 @@ before_action :set_machine, only: [ :edit, :show, :update]
 
   def update
     if @machine.update(machine_params)
-      # binding.pry
       redirect_to machine_path(@machine.id)
     else
       render :edit

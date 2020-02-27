@@ -17,11 +17,26 @@
       = f.label :quentity,"数量",class:"h5"
       .border-bottom.pb-5
         = f.number_field :quentity, step: 5, value: 0, class:"form-control"
-      .ml-3
-        %p 検索
-        = form_tag(new_part_path, :method => 'get') do
-          = text_field_tag :search, params[:search]
-          = submit_tag 'Search', :name => nil
-        %ul
+      .field.mt-5
+        .field--left
+          %label.label{:for => "chat_group_チャットメンバーを追加"} 関連設備の登録
+        .field--right
+          .search
+            %input#machine-search-field.input{:placeholder => "関連する設備があれば入力してください", :type => "text",:class => "form-control mb-5"}/
+          #machine-search-result
+
+        .field--left
+          %label.label{:for => "chat_group_チャットメンバー"} 追加を押して設備に登録
+        .field--right
+          .js-add-machine
+            %input{name: "part[machine_ids][]", type: "hidden"}
+        - @part.machines.each do |machine|
+          .js-machine
+            %input{name: "part[machine_ids][]", type: "hidden", value: user.id}
+            %p.machine_name
+              = machine.name 
+            %a.machine-search-remove.machine_remove.js-remove-btn.btn-danger.btn.justify-content-between.border-bottom
+              削除
+
           
       = f.submit 'Send', class: 'btn btn-success mt-5 float-right'
