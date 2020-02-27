@@ -28,6 +28,7 @@ $(document).on('turbolinks:load',function() {
   function addMember(machineId) {
     let html = `<input value="${machineId}" name="part[machine_ids][]" type="hidden" id="part_machine_ids_${machineId}" />`;
     $(`#${machineId}`).append(html);
+    console.log('append');
   }
   $("#machine-search-field").on("keyup", function() {
     let input = $("#machine-search-field").val();
