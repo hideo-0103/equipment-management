@@ -11,7 +11,6 @@ before_action :set_machine, only: [ :edit, :show, :update]
   end
 
   def create
-    binding.pry
     @machine = Machine.new(machine_params)
     if @machine.save
       redirect_to root_path
@@ -30,7 +29,6 @@ before_action :set_machine, only: [ :edit, :show, :update]
 
   def update
     if @machine.update(machine_params)
-      # binding.pry
       redirect_to machine_path(@machine.id)
     else
       render :edit
