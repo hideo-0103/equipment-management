@@ -51,9 +51,9 @@ $(function() {
           addNomachine();
         }
       })
-      .fail(function() {
-        alert("通信エラーです。ユーザーが表示できません。");
-      });
+      // .fail(function() {
+      //   alert("通信エラーです。ユーザーが表示できません。");
+      // });
   });
   $(document).on("click", ".machine_add", function() {
     const machineName = $(this).attr("data-machine-name");
