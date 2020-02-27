@@ -58,11 +58,11 @@ $(document).on('turbolinks:load',function() {
     console.log('click');
     const machineName = $(this).attr("data-machine-name");
     const machineId = $(this).attr("data-machine-id");
+    addDeletemachine(machineName, machineId);
+    addMember(machineId);
     $(this)
       .parent()
       .remove();
-    addDeletemachine(machineName, machineId);
-    addMember(machineId);
   });
   $(document).on("click", ".machine_remove", function() {
     const machineName = $(this).attr("data-machine-name");
