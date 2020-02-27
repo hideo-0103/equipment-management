@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load',function() {
   function addmachine(machine) {
     let html = `
       <div class="part_machines p-1 d-flex justify-content-between border-bottom">
@@ -54,7 +54,7 @@ $(function() {
       }
     })
   });
-  $(document).on("click", ".machine_add", function() {
+  $(document).on("click", ".machine_add", function(e) {
     console.log('click');
     const machineName = $(this).attr("data-machine-name");
     const machineId = $(this).attr("data-machine-id");
@@ -63,6 +63,7 @@ $(function() {
     $(this)
       .parent()
       .remove();
+      e.preventDefault();
   });
   $(document).on("click", ".machine_remove", function() {
     const machineName = $(this).attr("data-machine-name");
