@@ -24,6 +24,7 @@ $(document).on('turbolinks:load',function() {
       <div class="machine-search-remove machine_remove js-remove-btn btn-danger btn" data-machine-id="${id}" data-machine-name="${name}">削除</div>
     </div>`;
     $(".js-add-machine").append(html);
+    console.log('html append');
   }
   function addMember(machineId) {
     let html = `<input value="${machineId}" name="part[machine_ids][]" type="hidden" id="part_machine_ids_${machineId}" />`;
@@ -39,22 +40,19 @@ $(document).on('turbolinks:load',function() {
       data: { keyword: input },
       dataType: "json"
     })
-      .done(function(machines) {
-        $("#machine-search-result").empty();
-  
-        if (machines.length !== 0) {
-          machines.forEach(function(machine) {
-            addmachine(machine);
-          });
-        } else if (input.length == 0) {
-          return false;
-        } else {
-          addNomachine();
-        }
-      })
-      // .fail(function() {
-      //   alert("通信エラーです。ユーザーが表示できません。");
-      // });
+    .done(function(machines) {
+      $("#machine-search-result").empty();
+
+      if (machines.length !== 0) {
+        machines.forEach(function(machine) {
+          addmachine(machine);
+        });
+      } else if (input.length == 0) {
+        return false;
+      } else {
+        addNomachine();
+      }
+    })
   });
   $(document).on("click", ".machine_add", function() {
     const machineName = $(this).attr("data-machine-name");
