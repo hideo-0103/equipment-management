@@ -54,7 +54,7 @@ $(document).on('turbolinks:load',function() {
       }
     })
   });
-  $(document).on("click", ".machine_add", function() {
+  $(document).on("click", ".machine_add", function(e) {
     console.log('click');
     const machineName = $(this).attr("data-machine-name");
     const machineId = $(this).attr("data-machine-id");
@@ -63,9 +63,9 @@ $(document).on('turbolinks:load',function() {
     $(this)
       .parent()
       .remove();
-      $('.machine_add').unbind('click');
+      e.stopImmediatePropagation();
   });
-  $(document).on("click", ".machine_remove", function() {
+  $(document).on("click", ".machine_remove", function(e) {
     const machineName = $(this).attr("data-machine-name");
     const machineId = $(this).attr("data-machine-id");
     const machine = {id: machineId,name:machineName}
@@ -73,5 +73,6 @@ $(document).on('turbolinks:load',function() {
     $(this)
       .parent()
       .remove();
+      e.stopImmediatePropagation();
   });
 });
