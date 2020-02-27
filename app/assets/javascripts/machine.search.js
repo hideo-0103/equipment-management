@@ -21,8 +21,8 @@ $(function() {
           addNomachine();
         }
       })
-      .fail(function() {
-        alert("通信エラーです。ユーザーが表示できません。");
-      });
+      // .fail(function() {
+      //   alert("通信エラーです。ユーザーが表示できません。");
+      // });
   });
 })
