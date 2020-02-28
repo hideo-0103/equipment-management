@@ -15,6 +15,7 @@ require 'carrierwave/storage/fog'
 #   config.fog_directory  = 'equipment-manegiment'
 # end
 CarrierWave.configure do |config|
+  config.storage = :fog
   config.fog_provider = 'fog/aws'
   config.fog_credentials = {
     provider: 'AWS',
