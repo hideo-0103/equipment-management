@@ -13,5 +13,4 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'equipment-manegiment'
-  config.asset_host = 'equipment-manegiment'
 end
