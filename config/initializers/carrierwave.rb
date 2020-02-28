@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'equipment-manegiment'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/equipment-manegiment'
+  config.asset_host = 'equipment-manegiment'
 end
