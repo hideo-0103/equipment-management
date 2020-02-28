@@ -59,7 +59,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'devise'
-gem 'fog-aws', group: :production
+# gem 'fog-aws', group: :production
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'jquery-rails'
@@ -71,3 +71,4 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'jquery-fileupload-rails'
 gem 'rubocop'
+gem 'fog'
