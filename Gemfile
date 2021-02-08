@@ -60,7 +60,7 @@ gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'devise'
 # gem 'fog-aws', group: :production
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick'
 gem 'jquery-rails'
 gem 'pry-rails'
